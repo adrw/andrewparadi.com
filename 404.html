@@ -5,7 +5,9 @@
     <script type="text/javascript">
       var newDomain = "http://adrw.ch"
       var newLoc = newDomain + window.location.pathname + window.location.hash + window.location.search
-      window.location.replace(newLoc)
+      if (window.location.hash != "#noredirect" && window.location.search != "?noredirect") {
+        window.location.replace(newLoc)
+      }
     </script>
     <title>Redirect andrewparadi.com -> adrw.ch</title>
     <noscript>
@@ -32,11 +34,23 @@
         <p>August 2018</p>
     </div>
     <footer>
+      <p>Powered by <a href="http://redirect.adrw.ch/">@adrw/https-redirect-javascript-with-meta-fallback</a> on <a href="https://pages.github.com/">GitHub Pages</a></p>
       <p>&copy; <a href="http://adrw.ch/">ADRW Digital</a> 2009-
         <noscript>2018</noscript>
         <script>document.write(new Date().getFullYear())</script>
       </p>
     </footer>
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-15052723-11']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
   </body>
 </html>
 
